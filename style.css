@@ -1,6 +1,19 @@
+@font-face {
+  font-family: "Changa";
+  src: url("./fonts/Changa/Changa-VariableFont_wght.ttf");
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("./fonts/Montserrat/Montserrat-VariableFont_wght.ttf");
+}
+
 html {
   box-sizing: border-box;
+  margin: 0;
+  /* min-height: 100%; */
 }
+
 
 *,
 *::before,
@@ -8,29 +21,125 @@ html {
   box-sizing: inherit;
 }
 
+:root {
+  --blackboard-color: #31343a;
+  --button-primary-color: #ff3f7b;
+  --button-primary-hover-color: #d63f75;
+  --button-primary-text-color: #fff;
+}
+
+
 body {
+  min-height: 100vh;
   margin: 0;
 }
 
 header {
-  background-color: thistle;
+  font-family: "Montserrat";
+
 }
 
 nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1rem;
+  padding: 0px 150px;
 }
 
-nav>ul {
+.left {
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 1rem;
+  font-weight: 900;
+  font-size: 1.45rem;
+}
+
+.right>ul {
+  font-weight: 400;
+  font-size: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
   gap: 2rem;
   list-style: none;
 }
 
-nav>* {
-  padding: 0rem 1rem;
+li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bare-button,
+.call-to-action {
+  cursor: pointer;
+  white-space: nowrap;
+  font-size: 1.15rem;
+  font-weight: 600;
+}
+
+.bare-button {
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+}
+
+.login {
+  color: var(--button-primary-color);
+}
+
+.login:hover {
+  color: var(--button-primary-hover-color);
+}
+
+.call-to-action {
+  display: flex;
+  align-items: center;
+  background-color: var(--button-primary-color);
+  border: none;
+  border-radius: 6px;
+  color: var(--button-primary-text-color);
+  height: 40px;
+  padding: 0.75rem 2rem;
+}
+
+.call-to-action:hover {
+  background-color: var(--button-primary-hover-color);
+}
+
+.grid {
+  background-color: var(--blackboard-color);
+  margin: 0 auto;
+  height: 595px;
+  width: 1190px;
+  display: grid;
+  grid-template-columns: repeat(14, 1fr);
+  grid-template-rows: repeat(7, 1fr);
+}
+
+.grid-cell {
+  width: 85px;
+  height: 85px;
+  border: gray 1px dotted;
+}
+
+.code {
+  width: 20%;
+  margin: 0 auto;
+  font-family: "Changa";
+  font-size: 2rem;
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: var(--blackboard-color) 5px solid;
+  border-radius: 6px;
+}
+
+.room-code {
+  color: var(--button-primary-color);
+  background: none;
+  font-style: italic;
+  font-weight: 900;
 }
